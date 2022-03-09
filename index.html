@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
 <link rel="stylesheet" href="style.css">
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <!------------------LIght BOx for Gallery-------------->
 <link rel="stylesheet" href="lightbox.min.css">
 <script type="text/javascript" src="lightbox-plus-jquery.min.js"></script>
@@ -16,7 +16,14 @@
 </head>
 <body>
 
-
+<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+<script src="config.js"></script>
+<script src="profile.js"></script>
     <!-------------------------------NAvigation Starts------------------>
 
     <nav class="navbar navbar-expand-md navbar-dark mb-4" style="background-color:#3097D1">
@@ -39,12 +46,8 @@
                 <input type="text" name="search" id="search" placeholder="Search" class="form-control form-control-sm">
             </form>
             <a href="notification.html" class="text-decoration-none" style="color:#CBE4F2;font-size:22px;"><i class="far fa-bell ml-3 d-none d-md-block"></i></a> 
-            
-<<<<<<< HEAD
+
             <a href="#modallogout" data-toggle="modal"><img src="img/avatar-dhg.png" alt="" class="rounded-circle ml-3 d-none d-md-block" id="profilePicture" width="32px" height="32px"></a>
-=======
-            <a href="#modallogout" data-toggle="modal"><img src="img/avatar-dhg.png" alt="" class="rounded-circle ml-3 d-none d-md-block" width="32px" height="32px"></a>
->>>>>>> c41bbfaeb636a70fd5e71729c6c5117088f273e6
 
             <div class="modal" id="modallogout" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
@@ -103,11 +106,10 @@
                      <a href="#" class="text-decoration-none">
                         <li class="media hover-media">
                            
-<<<<<<< HEAD
+
                                 <img src="img/avatar-dhg.png" id="profilePicture" alt="img" width="60px" height="60px" class="rounded-circle mr-3">
-=======
-                                <img src="img/avatar-dhg.png" alt="img" width="60px" height="60px" class="rounded-circle mr-3">
->>>>>>> c41bbfaeb636a70fd5e71729c6c5117088f273e6
+
+                        
 
                                 <div class="media-body text-dark">
                                         <h6 class="media-header">Jchob Thunder and <strong> 1 others</strong></h6>
@@ -290,13 +292,10 @@
                     <div class="card card-left1 mb-4" >
                         <img src="img/photo-1455448972184-de647495d428.jpg" alt="" class="card-img-top img-fluid">
                         <div class="card-body text-center ">
-<<<<<<< HEAD
+
                             <img src="img/avatar-dhg.png" alt="img" width="120px" height="120px" id="profilePicture1" class="rounded-circle mt-n5">
                             <h5 class="card-title" id="profileName1">Anushree Dutt</h5>
-=======
-                            <img src="img/avatar-dhg.png" alt="img" width="120px" height="120px" class="rounded-circle mt-n5">
-                            <h5 class="card-title">Anushree Dutt</h5>
->>>>>>> c41bbfaeb636a70fd5e71729c6c5117088f273e6
+
                             <p class="card-text text-center mb-2">Hi I am a CodeXplorer!</p>
                             <ul class="list-unstyled nav justify-content-center">
                                <a href="#" class="text-dark text-decoration-none"> <li class="nav-item">Dev Buddies <br> <strong>3</strong></li></a>
@@ -371,23 +370,55 @@
 
  <!--------------------------Ends Left columns------------------------->
 
+<div>
+    <img src="https://www.google.com/search?q=profile+image&rlz=1C1CHBF_enIN900IN900&sxsrf=APq-WBst49D8Wcx2kri0UkasjlS2a_vFfg:1646824817100&tbm=isch&source=iu&ictx=1&vet=1&fir=H6pHpB03ZEAgeM%252Cwg0CyFWNfK7o5M%252C_%253B-H_ExttvR7ahYM%252Cb5C9ViMmmhpq-M%252C_%253BeHQKa74ZnnpTfM%252CSixlWtBpRVa7SM%252C_%253Bc4DKZX1IkCpVhM%252Cb5C9ViMmmhpq-M%252C_%253BgRmIHR3owD_V0M%252CpmE0x0RqkiBF7M%252C_%253BjAbbSdWZuoI5VM%252C1TOa8nNeHRwggM%252C_%253BS2NNOWEtx4Sh8M%252CWIYPytbMl_8XfM%252C_%253BuXISzfBmyACS2M%252CUaTT14cKZXZhDM%252C_%253B31dvrCPLIkewdM%252CdSpQ5-chSmGJjM%252C_%253BiqUapMoekRrKBM%252Cy7i4Swccn0rqpM%252C_%253B6LZBULRxg_WfYM%252CgMlIcsQMiG-F2M%252C_%253B8WoEgpJPeH0e2M%252CFvQHUVZ-cx81xM%252C_%253B-h20Jdis7Qx6mM%252C-m0v_GLbqugcoM%252C_%253BkEuHdfl2sp9d1M%252COgWk3wP_2xVHMM%252C_%253BJpaFCmffhUdABM%252CeirPelkp9eoYkM%252C_&usg=AI4_-kQjccr7G1RsnUETMwfLiM4HCXJcSA&sa=X&ved=2ahUKEwiLzOvB9Lj2AhW9rVYBHdE1AcMQ9QF6BAgEEAE#imgrc=JpaFCmffhUdABM" id="profileImage">
+    <div id="profileName"></div>
 
+</div>
 
 
 
  <!---------------------------------------Middle columns  start---------------->
 
 
+<div class="col-12 col-lg-6" >
+<div class="middle-column" id="columns">
+    </div>
+<script type="text/javascript">
+    
+const dbRef = firebase.database().ref();
+dbRef.child("users").get().then((snapshot) => {
+  if (snapshot.exists()) {
+//    console.log(snapshot.val());
+//    var users=snapshot.val();
+    getUserData(snapshot.val());
+  } else {
+    console.log("No data available");
+  }
+}).catch((error) => {
+  console.error(error);
+});
+function getUserData(users){
+    console.log(users);
+}
+//for loop
+const para = document.createElement("div");
+const node = document.createTextNode("This is new.");
+para.appendChild(node);
+
+const element = document.getElementById("columns");
+element.appendChild(para);
+//for loop ends
+</script>
+    
+    </div>
+           
 
 <!------------------------Middle column Ends---------------->
 
 
 
-<div id="profile">
-    <div id="profileImage">
-        <img src="https://www.google.com/search?q=profile+image&rlz=1C1CHBF_enIN900IN900&sxsrf=APq-WBs2l07EKHZC6kJ00ea2bdQTZNFyLg:1646822910082&tbm=isch&source=iu&ictx=1&vet=1&fir=H6pHpB03ZEAgeM%252Cwg0CyFWNfK7o5M%252C_%253B-H_ExttvR7ahYM%252Cb5C9ViMmmhpq-M%252C_%253BeHQKa74ZnnpTfM%252CSixlWtBpRVa7SM%252C_%253Bc4DKZX1IkCpVhM%252Cb5C9ViMmmhpq-M%252C_%253BgRmIHR3owD_V0M%252CpmE0x0RqkiBF7M%252C_%253BjAbbSdWZuoI5VM%252C1TOa8nNeHRwggM%252C_%253BS2NNOWEtx4Sh8M%252CWIYPytbMl_8XfM%252C_%253BuXISzfBmyACS2M%252CUaTT14cKZXZhDM%252C_%253B31dvrCPLIkewdM%252CdSpQ5-chSmGJjM%252C_%253BiqUapMoekRrKBM%252Cy7i4Swccn0rqpM%252C_%253B6LZBULRxg_WfYM%252CgMlIcsQMiG-F2M%252C_%253B8WoEgpJPeH0e2M%252CFvQHUVZ-cx81xM%252C_%253BkEuHdfl2sp9d1M%252COgWk3wP_2xVHMM%252C_%253B-h20Jdis7Qx6mM%252C-m0v_GLbqugcoM%252C_%253BJpaFCmffhUdABM%252CeirPelkp9eoYkM%252C_&usg=AI4_-kQYVkePjm6cJB_53kqfxUrNfIbtLg&sa=X&ved=2ahUKEwj2pcC07bj2AhWPC94KHcgBAxQQ9QF6BAgoEAE#imgrc=eHQKa74ZnnpTfM">
-    </div>
-</div>
+
 
 
 
@@ -493,15 +524,5 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <<<<<<< HEAD
 <!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
-<script src="config.js"></script>
-<script src="profile.js"></script>
-=======
->>>>>>> c41bbfaeb636a70fd5e71729c6c5117088f273e6
-</body>
+
 </html>
