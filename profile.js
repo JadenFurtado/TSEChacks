@@ -14,11 +14,6 @@ firebase.auth().onAuthStateChanged((user) => {
       document.getElementById("profileName1").textContent=user.displayName;
       // ...
     } else {
-    document.getElementById("signin").style.display = "block";
-    document.getElementById("signout").style.display = "none";
-    console.log("logged out");
-  
-  //provider.addScope("https://www.googleapis.com/auth/calendar");
-  	console.log(firebase.auth().currentUser);
+    location.replace("http://localhost/login.html");
   	}
 });
