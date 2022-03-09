@@ -251,7 +251,7 @@
 
 
         <div class="banner">
-            <div class="banner-title d-flex flex-column justify-content-center align-items-center">
+            <div class="banner-title d-flex flex-column justify-content-center align-items-center" id="profileData">
                 <img src="img/avatar-dhg.png" id="profilePicture" alt="img" class="rounded-circle" width="80px" height="80px">
                 <h3 class="text-light" id="profileName1">Anushree Dutt</h3>
                 <p class="text-light">CodeXplorers!</p>
@@ -396,7 +396,29 @@ if(x==null){
     myData();
 }
 else{
+    var profileBanner = document.getElementById("profileData");
+    var connectionButton = document.createElement("button");
+    connectionButton.textContent = "Connect";
+    connectionButton.onclick = "connect("+x+")";
+    connectionButton.addClass = "btn";
+    profileBanner.appendChild(connectionButton)
     userData(x);
+}
+
+function connect(userId){
+    firebase.auth().onAuthStateChanged((user)=>{
+   if(user){
+      firebase.database().ref('users/' + user.uid).set({
+        username: user.displayName,
+        email: user.email,
+        profile_picture : user.photoURL
+      });
+      console.log("success");
+    }else{
+        alert("please login to connect");
+    //  location.="login.html";
+    }
+  });
 }
 </script>
 </body>

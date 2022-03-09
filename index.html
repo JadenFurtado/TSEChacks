@@ -399,16 +399,27 @@ dbRef.child("users").get().then((snapshot) => {
   console.error(error);
 });
 function getUserData(users){
-    console.log(users);
+//    console.log(users);
+    for(user in users){
+        var tag = document.createElement("div");
+        var userimage = document.createElement("img");
+        userimage.src = users[user]['profile_picture'];
+        var a = $('<a />');
+        a.attr('href',"test link");
+        a.text("test");
+        $(tag).append(a);
+        //var link = document.createElement('a');
+        //a.href="/profile.html?userId="+users[user];
+        var text = document.createTextNode(users[user]['username']);
+        tag.appendChild(userimage);
+        //tag.appendChild(link);
+        tag.appendChild(text);
+        var element = document.getElementById("columns");
+        element.appendChild(tag);
+    //console.log(users[user]['email']);
+    }
 }
-//for loop
-const para = document.createElement("div");
-const node = document.createTextNode("This is new.");
-para.appendChild(node);
 
-const element = document.getElementById("columns");
-element.appendChild(para);
-//for loop ends
 </script>
     
     </div>
