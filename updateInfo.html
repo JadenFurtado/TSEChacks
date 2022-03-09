@@ -1,85 +1,362 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+<link rel="stylesheet" href="style.css">
+
+<!------------------LIght BOx for Gallery-------------->
+<link rel="stylesheet" href="lightbox.min.css">
+<script type="text/javascript" src="lightbox-plus-jquery.min.js"></script>
+<!------------------LIght BOx for Gallery-------------->
+<title>Application-1</title>
 </head>
 <body>
-        <div>
-            <label for="tech-stack">Enter your preferred tech stack:</label>  
-            <input type="text" id="tech-stack" name="tech-stack">
-        </div>
-       
-        <div>
-            <label for="proj-links">Add your github profile link: </label>
-            <input type="text" id="github-link" name="proj-links">
-        </div>
-      
-        <div>
-            <label for="resume">Add your resume link: </label>
-            <input type="text" id="resume" name="resume">
+
+
+    <!-------------------------------NAvigation Starts------------------>
+
+    <nav class="navbar navbar-expand-md navbar-dark mb-4" style="background-color:#3097D1">
+        <a href="login.html" class="navbar-brand"><img src="img/brand-white.png" alt="logo" class="img-fluid" width="80px" height="100px"></a>
+
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#responsive"><span class="navbar-toggler-icon"></span></button>
+
+
+        <div class="collapse navbar-collapse" id="responsive">
+            <ul class="navbar-nav mr-auto text-capitalize">
+                <li class="nav-item"><a href="index.html" class="nav-link active">home</a></li>
+                <li class="nav-item"><a href="profile.html" class="nav-link">profile</a></li>
+                <li class="nav-item"><a href="#modalview" class="nav-link" data-toggle="modal">messages</a></li>
+                <li class="nav-item"><a href="notification.html" class="nav-link">docs</a></li>
+               
+            </ul>
+
+            <form action="" class="form-inline ml-auto d-none d-md-block">
+                <input type="text" name="search" id="search" placeholder="Search" class="form-control form-control-sm">
+            </form>
+            <a href="notification.html" class="text-decoration-none" style="color:#CBE4F2;font-size:22px;"><i class="far fa-bell ml-3 d-none d-md-block"></i></a> 
+            
+            <a href="#modallogout" data-toggle="modal"><img src="img/avatar-dhg.png" alt="" class="rounded-circle ml-3 d-none d-md-block" id="profilePicture" width="32px" height="32px"></a>
+
+            <div class="modal" id="modallogout" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">CodeXplorers</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Do you want to logout?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">Log Out</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                </div>
+                </div>
+            </div>
+            </div>
+            
+
+
+
         </div>
 
-        <button type="submit" onclick="updateInfo()">Update</button>
-  
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
 
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-        https://firebase.google.com/docs/web/setup#available-libraries -->
-    <script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
-    <script src="config.js"></script>
-    <script src="updateInfo.js"></script>
+
+
+
+    </nav>
+
+    <!---------------------------------------------Ends navigation------------------------------>
+
+    <!---------------------------MOdal Section  satrts------------------->
+
+    <div class="modal fade" id="modalview">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+
+            <div class="modal-content">
+
+
+                <div class="modal-header">
+                    <div class="modal-title h4">Messages</div>
+
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+
+                <div class="modal-body">
+
+
+                    <ul class="list-unstyled">
+
+
+                     <a href="#" class="text-decoration-none">
+                        <li class="media hover-media">
+                           
+                                <img src="img/avatar-dhg.png" id="profilePicture" alt="img" width="60px" height="60px" class="rounded-circle mr-3">
+
+                                <div class="media-body text-dark">
+                                        <h6 class="media-header">Jchob Thunder and <strong> 1 others</strong></h6>
+                                        <p class="media-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+
+                                </div>
+
+                        </li>
+                    </a>
+                    <hr class="my-3">
+
+
+                    
+                    <a href="#" class="text-decoration-none">
+                            <li class="media hover-media">
+                               
+                                    <img src="img/avatar-fat.jpg" alt="img" width="60px" height="60px" class="rounded-circle mr-3">
+    
+                                    <div class="media-body text-dark">
+                                            <h6 class="media-header">Mark Otto and <strong> 3 others</strong></h6>
+                                            <p class="media-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    
+                                    </div>
+    
+                            </li>
+                        </a>
+
+
+                        <hr class="my-3">
+
+
+                        <a href="#" class="text-decoration-none">
+                            <li class="media hover-media">
+                               
+                                    <img src="img/avatar-mdo.png" alt="img" width="60px" height="60px" class="rounded-circle mr-3">
+    
+                                    <div class="media-body text-dark">
+                                            <h6 class="media-header">Archer andu and <strong> 5 others</strong></h6>
+                                            <p class="media-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    
+                                    </div>
+    
+                            </li>
+                        </a>
+
+                        <hr class="my-3">
+
+
+                        <a href="#" class="text-decoration-none">
+                                <li class="media hover-media">
+                                   
+                                        <img src="img/avatar-dhg.png" alt="img" width="60px" height="60px" class="rounded-circle mr-3">
+        
+                                        <div class="media-body text-dark">
+                                                <h6 class="media-header">Jchob Thunder and <strong> 1 others</strong></h6>
+                                                <p class="media-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        
+                                        </div>
+        
+                                </li>
+                            </a>
+                            <hr class="my-3">
+        
+        
+                            
+                            <a href="#" class="text-decoration-none">
+                                    <li class="media hover-media">
+                                       
+                                            <img src="img/avatar-fat.jpg" alt="img" width="60px" height="60px" class="rounded-circle mr-3">
+            
+                                            <div class="media-body text-dark">
+                                                    <h6 class="media-header">Mark Otto and <strong> 3 others</strong></h6>
+                                                    <p class="media-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            
+                                            </div>
+            
+                                    </li>
+                                </a>
+        
+        
+                                <hr class="my-3">
+        
+        
+                                <a href="#" class="text-decoration-none">
+                                    <li class="media hover-media">
+                                       
+                                            <img src="img/avatar-mdo.png" alt="img" width="60px" height="60px" class="rounded-circle mr-3">
+            
+                                            <div class="media-body text-dark">
+                                                    <h6 class="media-header">Archer andu and <strong> 5 others</strong></h6>
+                                                    <p class="media-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            
+                                            </div>
+            
+                                    </li>
+                                </a>
+
+                        
+                                <hr class="my-3">
+                                <a href="#" class="text-decoration-none">
+                                        <li class="media hover-media">
+                                           
+                                                <img src="img/avatar-dhg.png" alt="img" width="60px" height="60px" class="rounded-circle mr-3">
+                
+                                                <div class="media-body text-dark">
+                                                        <h6 class="media-header">Jchob Thunder and <strong> 1 others</strong></h6>
+                                                        <p class="media-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                
+                                                </div>
+                
+                                        </li>
+                                    </a>
+                                    <hr class="my-3">
+                
+                
+                                    
+                                    <a href="#" class="text-decoration-none">
+                                            <li class="media hover-media">
+                                               
+                                                    <img src="img/avatar-fat.jpg" alt="img" width="60px" height="60px" class="rounded-circle mr-3">
+                    
+                                                    <div class="media-body text-dark">
+                                                            <h6 class="media-header">Mark Otto and <strong> 3 others</strong></h6>
+                                                            <p class="media-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    
+                                                    </div>
+                    
+                                            </li>
+                                        </a>
+                
+                
+                                        <hr class="my-3">
+                
+                
+                                        <a href="#" class="text-decoration-none">
+                                            <li class="media hover-media">
+                                               
+                                                    <img src="img/avatar-mdo.png" alt="img" width="60px" height="60px" class="rounded-circle mr-3">
+                    
+                                                    <div class="media-body text-dark">
+                                                            <h6 class="media-header">Archer andu and <strong> 5 others</strong></h6>
+                                                            <p class="media-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    
+                                                    </div>
+                    
+                                            </li>
+                                        </a>
+    
+    
+                    </ul>
+                  
+
+                </div>
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+    <!-------------------------------MOdal Ends---------------------------->
+
+
+
+    <!-------------------------------------------Start Grids layout for lg-xl-3 columns and (xs-lg 1 columns)--------------------------------->
+
+
+    <div class="container">
+        <div class="row">
+          <div class="wrapper">
+            <div class="title-text">
+              <div class="title login">Update Information</div>
+              <!-- <div class="title signup">Signup Form</div> -->
+            </div>
+            <!-- <div class="form-container">
+              <div class="slide-controls">
+                <input type="radio" name="slide" id="login" checked>
+                <input type="radio" name="slide" id="signup">
+                <label for="login" class="slide login">Login</label>
+                <label for="signup" class="slide signup">Signup</label>
+                <div class="slider-tab"></div>
+              </div> -->
+              <div class="form-inner">
+                <form action="#" class="login">
+                  <div class="field">
+                    <input type="text" placeholder="Preferred tech stack" id="tech-stack" name="tech-stack" required>
+                  </div>
+                  <div class="field">
+                    <input type="text" placeholder="GitHub profile link" id="github-link" name="proj-links" required>
+                  </div>
+                  <div class="field">
+                    <input type="text" placeholder="Resume link" id="resume" name="resume"required>
+                  </div>
+                  <!-- <div class="pass-link"><a href="#">Forgot password?</a></div> -->
+                  <div class="field btn">
+                    <div class="btn-layer"></div>
+                    <input type="submit" onclick="updateInfo()" value="Update">
+                  </div>
+                  <!-- <div class="signup-link">Not a member? <a href="">Signup now</a></div> -->
+                </form>
+                <!-- <form action="#" class="signup">
+                  <div class="field">
+                    <input type="text" placeholder="Email Address" required>
+                  </div>
+                  <div class="field">
+                    <input type="password" placeholder="Password" required>
+                  </div>
+                  <div class="field">
+                    <input type="password" placeholder="Confirm password" required>
+                  </div>
+                  <div class="field btn">
+                    <div class="btn-layer"></div>
+                    <input type="submit" value="Signup">
+                  </div>
+                </form> -->
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    
+
+
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+    https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+<script src="config.js"></script>
+<script src="updateInfo.js"></script>
+
+<!------------------------Light BOx OPtions------------->
+<script>
+        lightbox.option({
+          
+        })
+    </script>
+
+
+
+<!------------------------Light BOx OPtions------------->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+<script src="config.js"></script>
+<script src="profile.js"></script>
 </body>
 </html>
-
-<!-- <div class="wrapper">
-    <div class="title-text">
-      <div class="title login">Update Information</div> -->
-      <!-- <div class="title signup">Signup Form</div> -->
-    <!-- </div> -->
-    <!-- <div class="form-container">
-      <div class="slide-controls">
-        <input type="radio" name="slide" id="login" checked>
-        <input type="radio" name="slide" id="signup">
-        <label for="login" class="slide login">Login</label>
-        <label for="signup" class="slide signup">Signup</label>
-        <div class="slider-tab"></div>
-      </div> -->
-      <!-- <div class="form-inner">
-        <form action="#" class="login">
-          <div class="field">
-            <input type="text" placeholder="Email Address" required>
-          </div>
-          <div class="field">
-            <input type="password" placeholder="Password" required>
-          </div>
-          <div class="pass-link"><a href="#">Forgot password?</a></div>
-          <div class="field btn">
-            <div class="btn-layer"></div>
-            <input type="submit" value="Login">
-          </div>
-          <div class="signup-link">Not a member? <a href="">Signup now</a></div>
-        </form> -->
-        <!-- <form action="#" class="signup">
-          <div class="field">
-            <input type="text" placeholder="Email Address" required>
-          </div>
-          <div class="field">
-            <input type="password" placeholder="Password" required>
-          </div>
-          <div class="field">
-            <input type="password" placeholder="Confirm password" required>
-          </div>
-          <div class="field btn">
-            <div class="btn-layer"></div>
-            <input type="submit" value="Signup">
-          </div>
-        </form> -->
-      <!-- </div>
-    </div>
-  </div> -->
