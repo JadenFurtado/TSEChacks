@@ -1,6 +1,9 @@
 // Get a reference to the database service
 var database = firebase.database();
-
+function userRegistration(){
+ googleSignin();
+ writeUserData();  
+}
 function writeUserData() {
     firebase.auth().onAuthStateChanged((user)=>{
    if(user){
@@ -10,8 +13,9 @@ function writeUserData() {
         profile_picture : user.photoURL
       });
       console.log("success");
+      location.replace("https://jadenfurtado.github.io/TSEChacks/profile.html");
     }else{
-      location.replace="http://127.0.0.1/login.html";
+      location.href="/login.html";
     }
   });
 }
