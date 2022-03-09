@@ -380,38 +380,46 @@
 
  <!---------------------------------------Middle columns  start---------------->
 
-
-<div class="col-12 col-lg-6" >
-<div class="middle-column" id="columns">
+ <div class="container col-12 col-lg-6">
+    <br><br>
+    <div class="row">
+      <div class="col-sm ">
+        <img src="img/avatar-dhg.png" alt="img" width="150px" height="150px" class="rounded-circle mb-4">
+        <h6>Jacob Thornton</h6>
+        <a href="#" class="btn btn-outline-info btn-sm mb-3"><i class="fas fa-user-friends"></i>Follow </a>
+      </div>
+      <div class="col-sm">
+        <img src="img/avatar-fat.jpg" alt="img" width="150px" height="150px" class="rounded-circle">
+        <h6>Mark otto</h6>
+        <a href="#" class="btn btn-outline-info  btn-sm"><i class="fas fa-user-friends"></i>Follow </a>
+      </div>
+      <div class="col-sm">
+        <img src="img/avatar-dhg.png" alt="img" width="150px" height="150px" class="rounded-circle mb-4">
+        <h6>Jacob Thornton</h6>
+        <a href="#" class="btn btn-outline-info btn-sm mb-3"><i class="fas fa-user-friends"></i>Follow </a>
+      </div>
     </div>
-<script type="text/javascript">
-    
-const dbRef = firebase.database().ref();
-dbRef.child("users").get().then((snapshot) => {
-  if (snapshot.exists()) {
-//    console.log(snapshot.val());
-//    var users=snapshot.val();
-    getUserData(snapshot.val());
-  } else {
-    console.log("No data available");
-  }
-}).catch((error) => {
-  console.error(error);
-});
-function getUserData(users){
-    console.log(users);
-}
-//for loop
-const para = document.createElement("div");
-const node = document.createTextNode("This is new.");
-para.appendChild(node);
+    <br><br>
+    <div class="row">
+        <div class="col-sm ">
+          <img src="img/avatar-dhg.png" alt="img" width="150px" height="150px" class="rounded-circle mb-4">
+          <h6>Jacob Thornton</h6>
+          <a href="#" class="btn btn-outline-info btn-sm mb-3"><i class="fas fa-user-friends"></i>Follow </a>
+        </div>
+        <div class="col-sm">
+          <img src="img/avatar-fat.jpg" alt="img" width="150px" height="150px" class="rounded-circle">
+          <h6>Mark otto</h6>
+          <a href="#" class="btn btn-outline-info  btn-sm"><i class="fas fa-user-friends"></i>Follow </a>
+        </div>
+        <div class="col-sm">
+          <img src="img/avatar-dhg.png" alt="img" width="150px" height="150px" class="rounded-circle mb-4">
+          <h6>Jacob Thornton</h6>
+          <a href="#" class="btn btn-outline-info btn-sm mb-3"><i class="fas fa-user-friends"></i>Follow </a>
+        </div>
+      </div>
+  </div>
 
-const element = document.getElementById("columns");
-element.appendChild(para);
-//for loop ends
-</script>
-    
-    </div>
+
            
 
 <!------------------------Middle column Ends---------------->
@@ -427,7 +435,7 @@ element.appendChild(para);
 
 
                 
-<div class="col-12 col-lg-3">
+<!-- <div class="col-12 col-lg-3">
 
 
     <div class="right-column">
@@ -478,7 +486,7 @@ element.appendChild(para);
             
 
 
-        </div>
+        </div> -->
 
         <!-- <div class="card shadow-sm">
             <div class="card-body">
@@ -522,7 +530,7 @@ element.appendChild(para);
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
-<<<<<<< HEAD
+
 <!-- The core Firebase JS SDK is always required and must be listed first -->
 
 </html>
