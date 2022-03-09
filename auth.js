@@ -8,7 +8,7 @@ firebase.auth().onAuthStateChanged((user) => {
       console.log(uid);
       document.getElementById("signin").style.display = "none";
       document.getElementById("signout").style.display = "block";
-      
+
       // ...
     } else {
      document.getElementById("signin").style.display = "block";
@@ -48,6 +48,7 @@ firebase.auth().onAuthStateChanged((user) => {
      firebase.auth().signOut()
      .then(function() {
         console.log('Signout Succesfull');
+        location.href="https://jadenfurtado.github.io/TSEChacks/login.html";
      }, function(error) {
         console.log('Signout Failed');  
      });
