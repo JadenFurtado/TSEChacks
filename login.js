@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
@@ -51,3 +52,16 @@ firebase.auth().onAuthStateChanged((user) => {
         console.log('Signout Failed');  
      });
   }
+=======
+const signUpButton = document.getElementById('signUp');
+const signInButton = document.getElementById('signIn');
+const container = document.getElementById('container');
+
+signUpButton.addEventListener('click', () => {
+	container.classList.add("right-panel-active");
+});
+
+signInButton.addEventListener('click', () => {
+	container.classList.remove("right-panel-active");
+});
+>>>>>>> 99904033600358f362052a8ad491cdbb9e9eac96
