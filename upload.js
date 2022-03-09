@@ -1,5 +1,5 @@
 
-var U;
+
 
 function fileUpload(){
 	const ref = firebase.storage().ref();
