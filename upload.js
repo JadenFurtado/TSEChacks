@@ -13,7 +13,7 @@ function fileUpload(){
   	.then(snapshot => snapshot.ref.getDownloadURL())
   	.then((url) => {
     	console.log(url);
-    	document.querySelector('#someImageTagID').src = url;
+    	//document.querySelector('#someImageTagID').src = url;
     	addPost(url);
   	})
   	.catch(console.error);
@@ -27,6 +27,7 @@ function addPost(url){
     	if(user){
     		var taskListRef = firebase.database().ref("users/"+user.uid+"/posts");
       		var newTaskRef = taskListRef.push();
+      		console.log(url);
       		newTaskRef.set({
       			postName:postName,
       			imageURL:url,
