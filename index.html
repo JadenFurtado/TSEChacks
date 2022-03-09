@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
 <link rel="stylesheet" href="style.css">
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <!------------------LIght BOx for Gallery-------------->
 <link rel="stylesheet" href="lightbox.min.css">
 <script type="text/javascript" src="lightbox-plus-jquery.min.js"></script>
@@ -16,7 +16,14 @@
 </head>
 <body>
 
-
+<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+<script src="config.js"></script>
+<script src="profile.js"></script>
     <!-------------------------------NAvigation Starts------------------>
 
     <nav class="navbar navbar-expand-md navbar-dark mb-4" style="background-color:#3097D1">
@@ -358,7 +365,11 @@
 
  <!--------------------------Ends Left columns------------------------->
 
+<div>
+    <img src="https://www.google.com/search?q=profile+image&rlz=1C1CHBF_enIN900IN900&sxsrf=APq-WBst49D8Wcx2kri0UkasjlS2a_vFfg:1646824817100&tbm=isch&source=iu&ictx=1&vet=1&fir=H6pHpB03ZEAgeM%252Cwg0CyFWNfK7o5M%252C_%253B-H_ExttvR7ahYM%252Cb5C9ViMmmhpq-M%252C_%253BeHQKa74ZnnpTfM%252CSixlWtBpRVa7SM%252C_%253Bc4DKZX1IkCpVhM%252Cb5C9ViMmmhpq-M%252C_%253BgRmIHR3owD_V0M%252CpmE0x0RqkiBF7M%252C_%253BjAbbSdWZuoI5VM%252C1TOa8nNeHRwggM%252C_%253BS2NNOWEtx4Sh8M%252CWIYPytbMl_8XfM%252C_%253BuXISzfBmyACS2M%252CUaTT14cKZXZhDM%252C_%253B31dvrCPLIkewdM%252CdSpQ5-chSmGJjM%252C_%253BiqUapMoekRrKBM%252Cy7i4Swccn0rqpM%252C_%253B6LZBULRxg_WfYM%252CgMlIcsQMiG-F2M%252C_%253B8WoEgpJPeH0e2M%252CFvQHUVZ-cx81xM%252C_%253B-h20Jdis7Qx6mM%252C-m0v_GLbqugcoM%252C_%253BkEuHdfl2sp9d1M%252COgWk3wP_2xVHMM%252C_%253BJpaFCmffhUdABM%252CeirPelkp9eoYkM%252C_&usg=AI4_-kQjccr7G1RsnUETMwfLiM4HCXJcSA&sa=X&ved=2ahUKEwiLzOvB9Lj2AhW9rVYBHdE1AcMQ9QF6BAgEEAE#imgrc=JpaFCmffhUdABM" id="profileImage">
+    <div id="profileName"></div>
 
+</div>
 
 
 
@@ -367,16 +378,13 @@
     
 </div>
 
+           
 
 <!------------------------Middle column Ends---------------->
 
 
 
-<div id="profile">
-    <div id="profileImage">
-        <img src="https://www.google.com/search?q=profile+image&rlz=1C1CHBF_enIN900IN900&sxsrf=APq-WBs2l07EKHZC6kJ00ea2bdQTZNFyLg:1646822910082&tbm=isch&source=iu&ictx=1&vet=1&fir=H6pHpB03ZEAgeM%252Cwg0CyFWNfK7o5M%252C_%253B-H_ExttvR7ahYM%252Cb5C9ViMmmhpq-M%252C_%253BeHQKa74ZnnpTfM%252CSixlWtBpRVa7SM%252C_%253Bc4DKZX1IkCpVhM%252Cb5C9ViMmmhpq-M%252C_%253BgRmIHR3owD_V0M%252CpmE0x0RqkiBF7M%252C_%253BjAbbSdWZuoI5VM%252C1TOa8nNeHRwggM%252C_%253BS2NNOWEtx4Sh8M%252CWIYPytbMl_8XfM%252C_%253BuXISzfBmyACS2M%252CUaTT14cKZXZhDM%252C_%253B31dvrCPLIkewdM%252CdSpQ5-chSmGJjM%252C_%253BiqUapMoekRrKBM%252Cy7i4Swccn0rqpM%252C_%253B6LZBULRxg_WfYM%252CgMlIcsQMiG-F2M%252C_%253B8WoEgpJPeH0e2M%252CFvQHUVZ-cx81xM%252C_%253BkEuHdfl2sp9d1M%252COgWk3wP_2xVHMM%252C_%253B-h20Jdis7Qx6mM%252C-m0v_GLbqugcoM%252C_%253BJpaFCmffhUdABM%252CeirPelkp9eoYkM%252C_&usg=AI4_-kQYVkePjm6cJB_53kqfxUrNfIbtLg&sa=X&ved=2ahUKEwj2pcC07bj2AhWPC94KHcgBAxQQ9QF6BAgoEAE#imgrc=eHQKa74ZnnpTfM">
-    </div>
-</div>
+
 
 
 
@@ -385,63 +393,41 @@
 
 
                 
-<div class="col-12 col-lg-3">
-
-
+<!-- <div class="col-12 col-lg-3">
     <div class="right-column">
-
         <div class="card shadow-sm mb-4" >
             <div class="card-body">
                 <h6 class="card-title">Sponsored</h6>
                 <img src="img/right1.jpg" alt="card-img" class="card-img mb-3">
                 <p class="card-text text-justify"> <span class="h6">It might be time to visit Iceland.</span> Iceland is so chill, and everything looks cool here. Also, we heard the people are pretty nice.  What are you waiting for?</p>
                 <a href="#" class="btn btn-outline-info card-link btn-sm">Buy a ticket</a>
-
-
             </div>
-
         </div>
-
-
         <div class="card shadow-sm mb-4">
-
             <div class="card-body">
-
                     <h6 class="card-title ">Likes <a href="#" class="ml-1"><small>.View All</small> </a> </h6>
                     <div class="row no-gutters d-none d-lg-flex">
                         <div class="col-6 p-1">
                                 <img src="img/avatar-dhg.png" alt="img" width="80px" height="80px" class="rounded-circle mb-4">
                                 <img src="img/avatar-fat.jpg" alt="img" width="80px" height="80px" class="rounded-circle">
-
-
-
                         </div>
                         <div class="col-6 p-1 text-left">
                             <h6>Jacob Thornton @fat</h6>
                             <a href="#" class="btn btn-outline-info btn-sm mb-3"><i class="fas fa-user-friends"></i>Follow </a>
-
                             <h6>Mark otto</h6>
                             <a href="#" class="btn btn-outline-info  btn-sm"><i class="fas fa-user-friends"></i>Follow </a>
-
                         </div>
-
                     </div>
-
             </div>
-
             <div class="card-footer">
-
                 <p class="lead" style="font-size:18px;">Anushree likes working on the Front End.</p>
             </div>
             
-
-
-        </div>
+        </div> -->
 
         <!-- <div class="card shadow-sm">
             <div class="card-body">
                 <p>&copy; 2018 Bootstrap
-
                         <a href="#">About</a>
                         <a href="#">Help</a>
                         <a href="#">Terms</a>

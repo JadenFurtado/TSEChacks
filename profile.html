@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="style.css">
 
 <!------------------LIght BOx for Gallery-------------->
@@ -35,7 +35,7 @@
                     <li class="nav-item"><a href="index.html" class="nav-link">home</a></li>
                     <li class="nav-item"><a href="profile.html" class="nav-link active">profile</a></li>
                     <li class="nav-item"><a href="#modalview" data-toggle="modal" class="nav-link">messages</a></li>
-                    <li class="nav-item"><a href="notification.html" class="nav-link">docs</a></li>
+                    <li class="nav-item"><a href="notification.html" class="nav-link">notifications</a></li>
                     <!-- <li class="nav-item"><a href="#" class="nav-link d-md-none">growl</a></li>
                     <li class="nav-item"><a href="#" class="nav-link d-md-none">logout</a></li> -->
     
@@ -45,9 +45,27 @@
                     <input type="text" name="search" id="search" placeholder="Search" class="form-control form-control-sm">
                 </form>
                 <a href="notification.html" class="text-decoration-none" style="color:#CBE4F2;font-size:22px;"><i class="far fa-bell ml-3 d-none d-md-block"></i></a> 
-                <img src="img/avatar-dhg.png" alt="" class="rounded-circle ml-3 d-none d-md-block" width="32px" height="32px">
+                <a href="#modallogout" data-toggle="modal"><img src="img/avatar-dhg.png" alt="" class="rounded-circle ml-3 d-none d-md-block" width="32px" height="32px"></a>
     
-    
+                <div class="modal" id="modallogout" tabindex="-1" role="dialog">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">CodeXplorers</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Do you want to logout?</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary">Log Out</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
     
     
     
@@ -232,16 +250,8 @@
                                                         </div>
                         
                                                 </li>
-                                            </a>
-        
-        
-    
-    
-                        </ul>
-    
-    
-    
-                        
+                                            </a> 
+                        </ul>                    
     
                     </div>
                 </div>
@@ -259,9 +269,9 @@
 
 
         <div class="banner">
-            <div class="banner-title d-flex flex-column justify-content-center align-items-center">
-                <img src="img/avatar-dhg.png" alt="img" class="rounded-circle" width="80px" height="80px">
-                <h3 class="text-light">Anushree Dutt</h3>
+            <div class="banner-title d-flex flex-column justify-content-center align-items-center" id="profileData">
+                <img src="img/avatar-dhg.png" id="profilePicture" alt="img" class="rounded-circle" width="80px" height="80px">
+                <h3 class="text-light" id="profileName1">Anushree Dutt</h3>
                 <p class="text-light">CodeXplorers!</p>
 
             </div>
@@ -272,9 +282,29 @@
                     <li class="nav-item nav-link"><a href="#" class="text-decoration-none">Resume</a></li>
                     <li class="nav-item nav-link"><a href="#" class="text-decoration-none">GitHub</a></li>
                     <li class="nav-item nav-link"><a href="#" class="text-decoration-none">LinkedIn</a></li>
+                    <li class="nav-item nav-link"><a href="#modal-addpost" data-toggle="modal" class="text-decoration-none"><i class="fa fa-plus"></i></a></li>                   
                 </ul>
 
             </div>
+            <div class="modal" id="modal-addpost" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">CodeXplorers</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Do you want to add post?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary"><input type="file" id="myFile" /></button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    </div>
+                    </div>
+                </div>
+                </div>
 
 
             
@@ -363,5 +393,51 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+<script src="config.js"></script>
+<script src="profile.js"></script>
+<script type="text/javascript">
+    function getUrlParam(paramName) {
+    var match = window.location.search.match("[?&]" + paramName + "(?:&|$|=([^&]*))");
+    return match ? (match[1] ? decodeURIComponent(match[1]) : "") : null;
+}
+var x = getUrlParam("userId");
+console.log(x);
+if(x==null){
+    myData();
+}
+else{
+    var profileBanner = document.getElementById("profileData");
+    var connectionButton = document.createElement("button");
+    connectionButton.textContent = "Connect";
+    connectionButton.onclick = "connect("+x+")";
+    connectionButton.addClass = "btn";
+    profileBanner.appendChild(connectionButton)
+    userData(x);
+}
+
+function connect(userId){
+    firebase.auth().onAuthStateChanged((user)=>{
+   if(user){
+      firebase.database().ref('users/' + user.uid).set({
+        username: user.displayName,
+        email: user.email,
+        profile_picture : user.photoURL
+      });
+      console.log("success");
+    }else{
+        alert("please login to connect");
+    //  location.="login.html";
+    }
+  });
+}
+</script>
 </body>
 </html>
