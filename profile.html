@@ -260,8 +260,8 @@
 
         <div class="banner">
             <div class="banner-title d-flex flex-column justify-content-center align-items-center">
-                <img src="img/avatar-dhg.png" alt="img" class="rounded-circle" width="80px" height="80px">
-                <h3 class="text-light">Anushree Dutt</h3>
+                <img src="img/avatar-dhg.png" id="profilePicture" alt="img" class="rounded-circle" width="80px" height="80px">
+                <h3 class="text-light" id="profileName1">Anushree Dutt</h3>
                 <p class="text-light">CodeXplorers!</p>
 
             </div>
@@ -363,5 +363,29 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+<script src="config.js"></script>
+<script src="profile.js"></script>
+<script type="text/javascript">
+    function getUrlParam(paramName) {
+    var match = window.location.search.match("[?&]" + paramName + "(?:&|$|=([^&]*))");
+    return match ? (match[1] ? decodeURIComponent(match[1]) : "") : null;
+}
+var x = getUrlParam("userId");
+console.log(x);
+if(x==null){
+    myData();
+}
+else{
+    userData(x);
+}
+</script>
 </body>
 </html>
