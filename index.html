@@ -31,18 +31,37 @@
                 <li class="nav-item"><a href="profile.html" class="nav-link">profile</a></li>
                 <li class="nav-item"><a href="#modalview" class="nav-link" data-toggle="modal">messages</a></li>
                 <li class="nav-item"><a href="notification.html" class="nav-link">docs</a></li>
-                <li class="nav-item"><a href="#" class="nav-link d-md-none">growl</a></li>
-                <li class="nav-item"><a href="#" class="nav-link d-md-none">logout</a></li>
 
+                
             </ul>
 
             <form action="" class="form-inline ml-auto d-none d-md-block">
                 <input type="text" name="search" id="search" placeholder="Search" class="form-control form-control-sm">
             </form>
             <a href="notification.html" class="text-decoration-none" style="color:#CBE4F2;font-size:22px;"><i class="far fa-bell ml-3 d-none d-md-block"></i></a> 
-            <img src="img/avatar-dhg.png" alt="" class="rounded-circle ml-3 d-none d-md-block" width="32px" height="32px">
+            
+            <a href="#modallogout" data-toggle="modal"><img src="img/avatar-dhg.png" alt="" class="rounded-circle ml-3 d-none d-md-block" width="32px" height="32px"></a>
 
-
+            <div class="modal" id="modallogout" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">CodeXplorers</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Do you want to logout?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">Log Out</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                </div>
+                </div>
+            </div>
+            </div>
+            
 
 
 
@@ -265,10 +284,10 @@
                         <div class="card-body text-center ">
                             <img src="img/avatar-dhg.png" alt="img" width="120px" height="120px" class="rounded-circle mt-n5">
                             <h5 class="card-title">Anushree Dutt</h5>
-                            <p class="card-text text-justify mb-2">I wish i was a little bit taller, wish i was a baller, wish i had a girl… also.</p>
+                            <p class="card-text text-center mb-2">Hi I am a CodeXplorer!</p>
                             <ul class="list-unstyled nav justify-content-center">
-                               <a href="#" class="text-dark text-decoration-none"> <li class="nav-item">Friends <br> <strong>12M</strong></li></a>
-                              <a href="#" class="text-dark text-decoration-none"> <li class="nav-item">Enimes <br> <strong>1</strong></li></a> 
+                               <a href="#" class="text-dark text-decoration-none"> <li class="nav-item">Dev Buddies <br> <strong>3</strong></li></a>
+                              <!-- <a href="#" class="text-dark text-decoration-none"> <li class="nav-item">Enimes <br> <strong>1</strong></li></a>  -->
                             </ul>
 
                         </div>
@@ -280,17 +299,16 @@
 
 
                     <div class="card shadow-sm card-left2 mb-4">
-
                         <div class="card-body">
 
                                 <h5 class="mb-3 card-title">About <small><a href="#" class="ml-1">Edit</a></small></h5>
 
-                                <p class="card-text"> <i class="fas fa-calendar-week mr-2"></i> Went to <a href="#" class="text-decoration-none">oh canada</a></p>
+                                <p class="card-text"> <i class="fas fa-calendar-week mr-2"></i> Went to <a href="#" class="text-decoration-none">TSEC</a></p>
 
-                                <p class="card-text"> <i class="fas fa-user-friends mr-2"></i> Become a friend with <a href="#" class="text-decoration-none">obama</a></p>
-                                <p class="card-text"> <i class="far fa-building mr-2"></i> Work at <a href="#" class="text-decoration-none">Github</a></p>
-                                <p class="card-text"> <i class="fas fa-home mr-2"></i> Live in <a href="#" class="text-decoration-none">San francisco</a></p>
-                                <p class="card-text"> <i class="fas fa-map-marker mr-2"></i> From <a href="#" class="text-decoration-none">Seattle, WA</a></p>
+                                <p class="card-text"> <i class="fas fa-user-friends mr-2"></i> See <a href="#" class="text-decoration-none">Friends list</a></p>
+                                <p class="card-text"> <i class="far fa-building mr-2"></i> Works at <a href="#" class="text-decoration-none">Github</a></p>
+                                <p class="card-text"> <i class="fas fa-home mr-2"></i> Lives in <a href="#" class="text-decoration-none">Mumbai</a></p>
+                                <p class="card-text"> <i class="fas fa-map-marker mr-2"></i> From <a href="#" class="text-decoration-none">Mumbai, India</a></p>
 
 
 
@@ -577,7 +595,7 @@
 
             <div class="card-footer">
 
-                <p class="lead" style="font-size:18px;">Dave really likes these nerds, no one knows why though.</p>
+                <p class="lead" style="font-size:18px;">Anushree likes working on the Front End.</p>
             </div>
             
 
