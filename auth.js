@@ -25,7 +25,7 @@ firebase.auth().onAuthStateChanged((user) => {
      .signInWithPopup(provider).then(function(result) {
         firebase.auth().currentUser.getIdToken(true).then(function(idToken) {
            console.log(firebase.auth().currentUser);
-           
+           location.href="https://jadenfurtado.github.io/TSEChacks/profile.html";
   }).catch(function(error) {
     // Handle error
   });  
