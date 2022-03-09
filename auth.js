@@ -8,6 +8,7 @@ firebase.auth().onAuthStateChanged((user) => {
       console.log(uid);
       document.getElementById("signin").style.display = "none";
       document.getElementById("signout").style.display = "block";
+      
       // ...
     } else {
      document.getElementById("signin").style.display = "block";
@@ -25,7 +26,7 @@ firebase.auth().onAuthStateChanged((user) => {
      .signInWithPopup(provider).then(function(result) {
         firebase.auth().currentUser.getIdToken(true).then(function(idToken) {
            console.log(firebase.auth().currentUser);
-           location.href="https://jadenfurtado.github.io/TSEChacks/profile.html";
+           
   }).catch(function(error) {
     // Handle error
   });  

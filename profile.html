@@ -60,7 +60,7 @@
                                 <p>Do you want to logout?</p>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-primary">Log Out</button>
+                                <button type="button" class="btn btn-primary" onclick="googleSignout()">Log Out</button>
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                             </div>
                             </div>
@@ -403,6 +403,7 @@
 <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
 <script src="config.js"></script>
 <script src="profile.js"></script>
+<script src="auth.js"></script>
 <script type="text/javascript">
     function getUrlParam(paramName) {
     var match = window.location.search.match("[?&]" + paramName + "(?:&|$|=([^&]*))");
