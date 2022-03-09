@@ -23,21 +23,11 @@
 </head>
 <body> 
     <table style="max-width: 400px;">
-    <tr>
-        <td>
-            <img src="https://img-authors.flaticon.com/google.jpg" style="max-width: 200px; max-height: 200px;">
-        </td>
-        <td>
-            <button name="submit" id="signin" onclick="googleSignin()" style="padding: 10px;">signin with Google</button>
-        </td>
-    </tr>
-    <tr>
-        <td></td>
-        <td>
-            <button name="signout" id="signout" onclick="googleSignout()" style="padding: 10px;">signout</button>
-        </td>
-    </tr>
+    <input type="file" name="file" id="photo">
+    <button onclick="addPost()">Upload</button>
     </table>
+    <textarea id="postName"></textarea>
+    <img src="someImageTagID">
 <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
 
@@ -46,7 +36,8 @@
 <script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-storage.js"></script>
 <script src="config.js"></script>
-<script src="auth.js"></script>
+<script src="upload.js"></script>
 </body>
 </html>
