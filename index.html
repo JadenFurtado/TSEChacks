@@ -380,50 +380,6 @@
 
  <!---------------------------------------Middle columns  start---------------->
 
-<<<<<<< HEAD
-
-<div class="col-12 col-lg-6" >
-<div class="middle-column" id="columns">
-    </div>
-<script type="text/javascript">
-    
-const dbRef = firebase.database().ref();
-dbRef.child("users").get().then((snapshot) => {
-  if (snapshot.exists()) {
-//    console.log(snapshot.val());
-//    var users=snapshot.val();
-    getUserData(snapshot.val());
-  } else {
-    console.log("No data available");
-  }
-}).catch((error) => {
-  console.error(error);
-});
-function getUserData(users){
-//    console.log(users);
-    for(user in users){
-        var tag = document.createElement("div");
-        var userimage = document.createElement("img");
-        userimage.src = users[user]['profile_picture'];
-        var a = $('<a />');
-        a.attr('href',"test link");
-        a.text("test");
-        $(tag).append(a);
-        //var link = document.createElement('a');
-        //a.href="/profile.html?userId="+users[user];
-        var text = document.createTextNode(users[user]['username']);
-        tag.appendChild(userimage);
-        //tag.appendChild(link);
-        tag.appendChild(text);
-        var element = document.getElementById("columns");
-        element.appendChild(tag);
-    //console.log(users[user]['email']);
-    }
-}
-
-</script>
-    
-=======
  <div class="container col-12 col-lg-6">
     <br><br>
     <div class="row">
@@ -442,7 +398,6 @@ function getUserData(users){
         <h6>Jacob Thornton</h6>
         <a href="#" class="btn btn-outline-info btn-sm mb-3"><i class="fas fa-user-friends"></i>Follow </a>
       </div>
->>>>>>> 082dcad576fec879afed0ff2cb8938c8e366324e
     </div>
     <br><br>
     <div class="row">
@@ -481,62 +436,40 @@ function getUserData(users){
 
                 
 <!-- <div class="col-12 col-lg-3">
-
-
     <div class="right-column">
-
         <div class="card shadow-sm mb-4" >
             <div class="card-body">
                 <h6 class="card-title">Sponsored</h6>
                 <img src="img/right1.jpg" alt="card-img" class="card-img mb-3">
                 <p class="card-text text-justify"> <span class="h6">It might be time to visit Iceland.</span> Iceland is so chill, and everything looks cool here. Also, we heard the people are pretty nice.  What are you waiting for?</p>
                 <a href="#" class="btn btn-outline-info card-link btn-sm">Buy a ticket</a>
-
-
             </div>
-
         </div>
-
-
         <div class="card shadow-sm mb-4">
-
             <div class="card-body">
-
                     <h6 class="card-title ">Likes <a href="#" class="ml-1"><small>.View All</small> </a> </h6>
                     <div class="row no-gutters d-none d-lg-flex">
                         <div class="col-6 p-1">
                                 <img src="img/avatar-dhg.png" alt="img" width="80px" height="80px" class="rounded-circle mb-4">
                                 <img src="img/avatar-fat.jpg" alt="img" width="80px" height="80px" class="rounded-circle">
-
-
-
                         </div>
                         <div class="col-6 p-1 text-left">
                             <h6>Jacob Thornton @fat</h6>
                             <a href="#" class="btn btn-outline-info btn-sm mb-3"><i class="fas fa-user-friends"></i>Follow </a>
-
                             <h6>Mark otto</h6>
                             <a href="#" class="btn btn-outline-info  btn-sm"><i class="fas fa-user-friends"></i>Follow </a>
-
                         </div>
-
                     </div>
-
             </div>
-
             <div class="card-footer">
-
                 <p class="lead" style="font-size:18px;">Anushree likes working on the Front End.</p>
             </div>
             
-
-
         </div> -->
 
         <!-- <div class="card shadow-sm">
             <div class="card-body">
                 <p>&copy; 2018 Bootstrap
-
                         <a href="#">About</a>
                         <a href="#">Help</a>
                         <a href="#">Terms</a>
