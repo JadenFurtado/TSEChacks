@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <div>
+            <label for="tech-stack">Enter your preferred tech stack:</label>  
+            <input type="text" id="tech-stack" name="tech-stack">
+        </div>
+       
+        <div>
+            <label for="proj-links">Add your github profile link: </label>
+            <input type="text" id="github-link" name="proj-links">
+        </div>
+      
+        <div>
+            <label for="resume">Add your resume link: </label>
+            <input type="text" id="resume" name="resume">
+        </div>
+
+        <button type="submit" onclick="updateInfo()">Update</button>
+  
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    <script src="config.js"></script>
+    <script src="updateInfo.js"></script>
+</body>
+</html>
