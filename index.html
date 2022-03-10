@@ -359,9 +359,8 @@
  <!--------------------------Ends Left columns------------------------->
 
 <div>
-    <img src="https://www.google.com/search?q=profile+image&rlz=1C1CHBF_enIN900IN900&sxsrf=APq-WBst49D8Wcx2kri0UkasjlS2a_vFfg:1646824817100&tbm=isch&source=iu&ictx=1&vet=1&fir=H6pHpB03ZEAgeM%252Cwg0CyFWNfK7o5M%252C_%253B-H_ExttvR7ahYM%252Cb5C9ViMmmhpq-M%252C_%253BeHQKa74ZnnpTfM%252CSixlWtBpRVa7SM%252C_%253Bc4DKZX1IkCpVhM%252Cb5C9ViMmmhpq-M%252C_%253BgRmIHR3owD_V0M%252CpmE0x0RqkiBF7M%252C_%253BjAbbSdWZuoI5VM%252C1TOa8nNeHRwggM%252C_%253BS2NNOWEtx4Sh8M%252CWIYPytbMl_8XfM%252C_%253BuXISzfBmyACS2M%252CUaTT14cKZXZhDM%252C_%253B31dvrCPLIkewdM%252CdSpQ5-chSmGJjM%252C_%253BiqUapMoekRrKBM%252Cy7i4Swccn0rqpM%252C_%253B6LZBULRxg_WfYM%252CgMlIcsQMiG-F2M%252C_%253B8WoEgpJPeH0e2M%252CFvQHUVZ-cx81xM%252C_%253B-h20Jdis7Qx6mM%252C-m0v_GLbqugcoM%252C_%253BkEuHdfl2sp9d1M%252COgWk3wP_2xVHMM%252C_%253BJpaFCmffhUdABM%252CeirPelkp9eoYkM%252C_&usg=AI4_-kQjccr7G1RsnUETMwfLiM4HCXJcSA&sa=X&ved=2ahUKEwiLzOvB9Lj2AhW9rVYBHdE1AcMQ9QF6BAgEEAE#imgrc=JpaFCmffhUdABM" id="profileImage">
-    <div id="profileName"></div>
-
+    <!-- <img src="https://www.google.com/search?q=profile+image&rlz=1C1CHBF_enIN900IN900&sxsrf=APq-WBst49D8Wcx2kri0UkasjlS2a_vFfg:1646824817100&tbm=isch&source=iu&ictx=1&vet=1&fir=H6pHpB03ZEAgeM%252Cwg0CyFWNfK7o5M%252C_%253B-H_ExttvR7ahYM%252Cb5C9ViMmmhpq-M%252C_%253BeHQKa74ZnnpTfM%252CSixlWtBpRVa7SM%252C_%253Bc4DKZX1IkCpVhM%252Cb5C9ViMmmhpq-M%252C_%253BgRmIHR3owD_V0M%252CpmE0x0RqkiBF7M%252C_%253BjAbbSdWZuoI5VM%252C1TOa8nNeHRwggM%252C_%253BS2NNOWEtx4Sh8M%252CWIYPytbMl_8XfM%252C_%253BuXISzfBmyACS2M%252CUaTT14cKZXZhDM%252C_%253B31dvrCPLIkewdM%252CdSpQ5-chSmGJjM%252C_%253BiqUapMoekRrKBM%252Cy7i4Swccn0rqpM%252C_%253B6LZBULRxg_WfYM%252CgMlIcsQMiG-F2M%252C_%253B8WoEgpJPeH0e2M%252CFvQHUVZ-cx81xM%252C_%253B-h20Jdis7Qx6mM%252C-m0v_GLbqugcoM%252C_%253BkEuHdfl2sp9d1M%252COgWk3wP_2xVHMM%252C_%253BJpaFCmffhUdABM%252CeirPelkp9eoYkM%252C_&usg=AI4_-kQjccr7G1RsnUETMwfLiM4HCXJcSA&sa=X&ved=2ahUKEwiLzOvB9Lj2AhW9rVYBHdE1AcMQ9QF6BAgEEAE#imgrc=JpaFCmffhUdABM" id="profileImage">
+    <div id="profileName"></div> -->
 </div>
 
 
@@ -446,12 +445,39 @@
 
 
 <!------------------------Light BOx OPtions------------->
-<script>
+<!-- <script>
         lightbox.option({
           
         })
-    </script>
-
+    </script> -->
+<script src=
+    "https://smtpjs.com/v3/smtp.js">
+</script>
+<script type="text/javascript">
+    var link;
+    function genLink(){
+        const timestamp = Date.now(); 
+        link = `https://meet.jit.si/${timestamp}`; 
+        console.log(link)
+    }
+    genLink();
+    Email.send({
+            Host: "smtp.gmail.com",
+            Username: "ridergomez810@gmail.com",
+            Password: "Yohan@123",
+            To: "yohangupta123@gmail.com",
+            From: "ridergomez810@gmail.com",
+            Subject: "Meet Link",
+            Body: `Join meet using this link: ${link}`
+          })
+            .then(response => { 
+                console.log(response)
+            })
+            .catch(error => {
+                console.error(error)
+            })
+</script>
+  
 
 
 <!------------------------Light BOx OPtions------------->
@@ -468,8 +494,7 @@
 <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
 <script src="config.js"></script>
 <script src="profile.js"></script>
-<script src="index.js"></script>
-<script src="meet.js"></script>
-<script src="https://smtpjs.com/v3/smtp.js"></script>
+<!-- <script src="meet.js"></script> -->
+<!-- <script src="https://smtpjs.com/v3/smtp.js"></script> -->
 </body>
 </html>
