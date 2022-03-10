@@ -21,7 +21,18 @@
 </head>
 <body>
 
-
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-storage.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+<script src="config.js"></script>
+<script src="profile.js"></script>
+<script src="auth.js"></script>
+<script src="upload.js"></script>
     <!-------------------------------NAvigation Starts------------------>
 
     <nav class="navbar navbar-expand-md navbar-dark" style="background-color:#3097D1">
@@ -277,7 +288,7 @@
             </div>
 
 
-            <div class="banner-end d-flex justify-content-center align-items-end">
+            <div class="banner-end d-flex justify-content-center align-items-end" id="lower_banner">
                 <ul class="nav text-light">
                     <li class="nav-item nav-link"><a href="#" class="text-decoration-none">Resume</a></li>
                     <li class="nav-item nav-link"><a href="#" class="text-decoration-none">GitHub</a></li>
@@ -300,7 +311,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-primary"><input type="file" id="myFile" /></button>
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-secondary"  onclick="fileUpload()">Upload</button>
                     </div>
                     </div>
                 </div>
@@ -312,7 +323,7 @@
         </div>
 
         <!--------------------Image Portfolio----------------->
-
+    
 
         <div class="grid-template container my-4">
             
@@ -394,16 +405,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-<!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
-<script src="config.js"></script>
-<script src="profile.js"></script>
-<script src="auth.js"></script>
+
 <script type="text/javascript">
     function getUrlParam(paramName) {
     var match = window.location.search.match("[?&]" + paramName + "(?:&|$|=([^&]*))");
@@ -420,7 +422,9 @@ else{
     connectionButton.textContent = "Connect";
     connectionButton.onclick = "connect("+x+")";
     connectionButton.addClass = "btn";
-    profileBanner.appendChild(connectionButton)
+    profileBanner.appendChild(connectionButton);
+    document.getElementById("lower_banner").style.display="none";
+
     userData(x);
 }
 

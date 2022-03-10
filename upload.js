@@ -3,7 +3,7 @@
 
 function fileUpload(){
 	const ref = firebase.storage().ref();
-	const file = document.querySelector('#photo').files[0]
+	const file = document.querySelector('#myFile').files[0]
 	const name = (+new Date()) + '-' + file.name;
 	const metadata = {
   		contentType: file.type
@@ -20,7 +20,8 @@ function fileUpload(){
 }
 
 function addPost(url){
-	var postName=document.querySelector("#postName").value;
+	var postName = "This is another sample post that goes here!";
+	//var postName=document.querySelector("#postName").value;
 	var today = new Date();
 	var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
   	firebase.auth().onAuthStateChanged((user)=>{

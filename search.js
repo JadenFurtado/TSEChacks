@@ -1,0 +1,1 @@
+Firestore.collection(collectionName).orderBy(field).where(field, ">=", keyword.toUpperCase()).where(field, "<=", keyword.toUpperCase() + "\uf8ff").get();
