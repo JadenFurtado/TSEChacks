@@ -7,6 +7,8 @@ firebase.auth().onAuthStateChanged((user) => {
       var uid = user.uid;
       console.log("logged in");
       console.log(uid);
+      
+      document.getElementById("profilePicture1").src=user.photoURL;
       //document.getElementById("signin").style.display = "none";
       //document.getElementById("signout").style.display = "block";
       document.getElementById("profileName1").textContent=user.displayName;

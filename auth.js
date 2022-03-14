@@ -26,10 +26,10 @@ firebase.auth().onAuthStateChanged((user) => {
      .signInWithPopup(provider).then(function(result) {
         firebase.auth().currentUser.getIdToken(true).then(function(idToken) {
            console.log(firebase.auth().currentUser);
-           
-  }).catch(function(error) {
-    // Handle error
-  });  
+           location.replace("http://localhost/Tsechacks/index.php");
+      }).catch(function(error) {
+         // Handle error
+      });  
      
      }).catch(function(error) {
      
@@ -48,7 +48,8 @@ firebase.auth().onAuthStateChanged((user) => {
      firebase.auth().signOut()
      .then(function() {
         console.log('Signout Succesfull');
-        location.href="https://jadenfurtado.github.io/TSEChacks/login.html";
+      //   location.replace("http://localhost/Tsechacks/login.html");
+        location.href="http://localhost/Tsechacks/login.html";
      }, function(error) {
         console.log('Signout Failed');  
      });

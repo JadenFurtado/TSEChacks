@@ -16,14 +16,6 @@
 </head>
 <body>
 
-<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
-<script src="config.js"></script>
-<script src="profile.js"></script>
     <!-------------------------------NAvigation Starts------------------>
 
     <nav class="navbar navbar-expand-md navbar-dark mb-4" style="background-color:#3097D1">
@@ -34,7 +26,7 @@
 
         <div class="collapse navbar-collapse" id="responsive">
             <ul class="navbar-nav mr-auto text-capitalize">
-                <li class="nav-item"><a href="index.html" class="nav-link active">home</a></li>
+                <li class="nav-item"><a href="index.php" class="nav-link active">home</a></li>
                 <li class="nav-item"><a href="profile.html" class="nav-link">profile</a></li>
                 <li class="nav-item"><a href="#modalview" class="nav-link" data-toggle="modal">messages</a></li>
                 <li class="nav-item"><a href="notification.html" class="nav-link">docs</a></li>
@@ -47,7 +39,7 @@
             </form>
             <a href="notification.html" class="text-decoration-none" style="color:#CBE4F2;font-size:22px;"><i class="far fa-bell ml-3 d-none d-md-block"></i></a> 
 
-            <a href="#modallogout" data-toggle="modal"><img src="img/avatar-dhg.png" alt="" class="rounded-circle ml-3 d-none d-md-block" id="profilePicture" width="32px" height="32px"></a>
+            <a href="#modallogout" data-toggle="modal"><img src="img/avatar-dhg.png" id="profilePicture1" alt="" class="rounded-circle ml-3 d-none d-md-block" id="profilePicture" width="32px" height="32px"></a>
 
             <div class="modal" id="modallogout" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
@@ -591,5 +583,8 @@
 <script src="profile.js"></script>
 <script src="meet.js"></script> -->
 <script src="https://smtpjs.com/v3/smtp.js"></script>
+<script>
+    myData();
+</script>
 </body>
 </html>
